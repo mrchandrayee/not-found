@@ -1,0 +1,132 @@
+/* 1. Reset and Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f7f9fc;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2d3436;
+    overflow: hidden;
+}
+
+/* 2. Layout Container */
+.error-container {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* 3. Typography Styles */
+.error-code {
+    font-size: 120px;
+    font-weight: 800;
+    line-height: 1;
+    color: #e2e8f0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    letter-spacing: 10px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1a202c;
+}
+
+/* 4. The Ghost Animation Wrapper */
+.ghost-wrapper {
+    position: relative;
+    padding: 40px 0;
+    margin-bottom: 5rem;
+}
+
+.ghost {
+    width: 80px;
+    height: 100px;
+    background: #ffffff;
+    border-radius: 50px 50px 0 0;
+    margin: 0 auto;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: inset -10px 0px 10px rgba(0,0,0,0.05);
+}
+
+.face {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.eyes {
+    width: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.eyes::before, .eyes::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #2d3436;
+    border-radius: 50%;
+}
+
+.mouth {
+    width: 15px;
+    height: 8px;
+    background: #2d3436;
+    margin: 10px auto 0;
+    border-radius: 0 0 10px 10px;
+}
+
+/* 5. Interactive Elements */
+.home-button {
+    display: inline-block;
+    padding: 12px 32px;
+    background-color: #6c5ce7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(108, 92, 231, 0.4);
+}
+
+.home-button:hover {
+    background-color: #5b4bc4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+}
+
+/* 6. Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.shadow {
+    width: 60px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 10px auto 0;
+    border-radius: 50%;
+    animation: shadow-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shadow-shimmer {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(0.7); opacity: 0.2; }
+}
